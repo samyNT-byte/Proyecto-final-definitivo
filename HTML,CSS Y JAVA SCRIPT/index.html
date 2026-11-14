@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MudanzaLimpia | Mudanzas y aseo</title>
+
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+  <!-- Encabezado y navegación -->
+  <header>
+    <h1>MudanzaLimpia</h1>
+
+    <nav>
+      <button onclick="mostrar('inicio')">Inicio</button>
+      <button onclick="mostrar('servicios')">Servicios</button>
+      <button onclick="mostrar('cotizar')">Cotizar</button>
+      <button onclick="mostrar('admin')">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Página de inicio -->
+    <section id="inicio">
+      <div class="hero">
+        <p class="etiqueta">MUDANZAS Y ASEO A DOMICILIO</p>
+
+        <h2>Tu nuevo comienzo,<br>sin complicaciones</h2>
+
+        <p>
+          Transportamos tus pertenencias y dejamos tu espacio limpio.
+          Contrata una mudanza, un aseo o ambos en un solo servicio.
+        </p>
+
+        <div class="acciones">
+          <button class="principal" onclick="mostrar('cotizar')">
+            Solicitar cotización
+          </button>
+
+          <button onclick="mostrar('servicios')">
+            Ver servicios
+          </button>
+        </div>
+      </div>
+
+      <h2 class="titulo">¿Cómo funciona?</h2>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <span class="numero">1</span>
+          <h3>Elige tu servicio</h3>
+          <p>
+            Selecciona una mudanza, un aseo o nuestro
+            paquete Departamento listo.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">2</span>
+          <h3>Solicita una cotización</h3>
+          <p>
+            Completa el formulario con tu nombre,
+            teléfono y el servicio que necesitas.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">3</span>
+          <h3>Coordinamos contigo</h3>
+          <p>
+            Revisamos tu solicitud para acordar
+            los detalles y el valor del servicio.
+          </p>
+        </article>
+      </div>
+
+      <div class="aviso">
+        <h3>Una mudanza, dos soluciones</h3>
+        <p>
+          Con Departamento listo puedes combinar transporte
+          y limpieza en una sola solicitud.
+        </p>
+
+        <button class="principal" onclick="elegirServicio('Departamento listo')">
+          Quiero el paquete completo
+        </button>
+      </div>
+    </section>
+
+    <!-- Catálogo de servicios -->
+    <section id="servicios" class="oculto">
+      <h2>Nuestros servicios</h2>
+
+      <p class="introduccion">
+        Elige lo que necesitas para tu próximo comienzo.
+      </p>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <h3>Mudanza residencial</h3>
+          <p>
+            Transporte de muebles, cajas y pertenencias
+            para tu cambio de hogar.
+          </p>
+          <p class="precio">Desde $150.000 COP</p>
+
+          <button class="principal" onclick="elegirServicio('Mudanza residencial')">
+            Solicitar mudanza
+          </button>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Aseo profundo</h3>
+          <p>
+            Limpieza de los espacios de tu casa
+            o apartamento.
+          </p>
+          <p class="precio">Desde $80.000 COP</p>
+
+          <button class="principal" onclick="elegirServicio('Aseo profundo')">
+            Solicitar aseo
+          </button>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Departamento listo</h3>
+          <p>
+            Combina mudanza y aseo para dejar
+            tu nuevo espacio listo.
+          </p>
+          <p class="precio">Desde $220.000 COP</p>
+
+          <button class="principal" onclick="elegirServicio('Departamento listo')">
+            Solicitar paquete
+          </button>
+        </article>
+      </div>
+
+      <p class="nota">
+        Precios ilustrativos para el proyecto.
+        El valor final depende de las características del servicio.
+      </p>
+    </section>
+
+    <!-- Formulario de cotización -->
+    <section id="cotizar" class="oculto">
+      <h2>Solicita tu cotización</h2>
+
+      <p class="introduccion">
+        Completa tus datos y selecciona el servicio.
+      </p>
+
+      <form id="formulario" class="formulario"
+            onsubmit="enviarSolicitud(event)">
+
+        <label for="nombre">Nombre completo</label>
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Escribe tu nombre"
+          maxlength="80"
+          required
+        >
+
+        <label for="telefono">Teléfono</label>
+        <input
+          type="tel"
+          id="telefono"
+          placeholder="Ejemplo: 3001234567"
+          maxlength="20"
+          required
+        >
+
+        <label for="servicio">Servicio</label>
+        <select id="servicio">
+          <option>Mudanza residencial</option>
+          <option>Aseo profundo</option>
+          <option>Departamento listo</option>
+        </select>
+
+        <div class="ayuda">
+          <h3>¿No sabes cuál elegir?</h3>
+          <p>Marca lo que necesitas:</p>
+
+          <label class="check">
+            <input type="checkbox" id="quiereMudanza">
+            Necesito mudanza
+          </label>
+
+          <label class="check">
+            <input type="checkbox" id="quiereAseo">
+            Necesito aseo
+          </label>
+
+          <button type="button" onclick="recomendar()">
+            Recomendarme un servicio
+          </button>
+
+          <p id="recomendacion" aria-live="polite"></p>
+        </div>
+
+        <button type="submit" class="principal">
+          Guardar solicitud de prueba
+        </button>
+
+        <p class="nota">
+          Prototipo: la solicitud solo se guarda temporalmente
+          en esta página. No se envía al negocio.
+        </p>
+      </form>
+
+      <p id="mensaje" aria-live="polite"></p>
+    </section>
+
+    <!-- Acceso de demostración -->
+    <section id="admin" class="oculto">
+      <h2>Panel de administrador</h2>
+
+      <p class="introduccion">
+        Demostración de consulta de solicitudes.
+      </p>
+
+      <form id="login" class="formulario" onsubmit="entrar(event)">
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" required>
+
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" required>
+
+        <button type="submit" class="principal">
+          Ingresar
+        </button>
+
+        <p id="error" aria-live="polite"></p>
+
+        <p class="nota">
+          Acceso de prueba, no es un sistema de seguridad real.
+        </p>
+      </form>
+
+      <div id="panel" class="oculto">
+        <div class="cabecera-panel">
+          <h3>Solicitudes recibidas</h3>
+          <button onclick="salir()">Cerrar sesión de prueba</button>
+        </div>
+
+        <div id="lista"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>MudanzaLimpia © 2026</p>
+    <p>Mudanzas y aseo en un solo lugar · Proyecto educativo</p>
+  </footer>
+  <script src="https://www.gstatic.com/firebasejs/12.17.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.17.0/firebase-firestore-compat.js"></script>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

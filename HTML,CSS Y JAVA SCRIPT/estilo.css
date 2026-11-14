@@ -1,0 +1,325 @@
+/* 1. Configuración general */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f5f9;
+  color: #243247;
+  line-height: 1.6;
+}
+
+h2,
+h3 {
+  color: #12355b;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+/* 2. Encabezado */
+header {
+  background: #12355b;
+  color: white;
+  padding: 20px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+nav button {
+  background: transparent;
+  color: white;
+  border: 1px solid #7290b0;
+}
+
+nav button:hover {
+  background: #244e79;
+}
+
+/* 3. Contenido */
+main {
+  max-width: 1100px;
+  min-height: 75vh;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.introduccion {
+  color: #5b6878;
+  margin-bottom: 25px;
+}
+
+.titulo {
+  margin-top: 40px;
+}
+
+/* 4. Presentación de inicio */
+.hero {
+  background: white;
+  border-top: 6px solid #ff7a00;
+  border-radius: 16px;
+  padding: 60px 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px #12355b12;
+}
+
+.hero h2 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 25px;
+  color: #5b6878;
+  font-size: 18px;
+}
+
+.hero .etiqueta {
+  color: #b94e00;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* 5. Botones */
+button {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 11px 18px;
+  border: 1px solid #d1dbe6;
+  border-radius: 8px;
+  background: #eaf0f7;
+  color: #12355b;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dce6f2;
+}
+
+.principal {
+  background: #ff7a00;
+  color: #172332;
+  border: none;
+  font-weight: bold;
+}
+
+.principal:hover {
+  background: #ed6f00;
+}
+
+/* 6. Tarjetas */
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tarjeta {
+  flex: 1;
+  min-width: 240px;
+  background: white;
+  padding: 25px;
+  border: 1px solid #e0e7ef;
+  border-top: 4px solid #ff7a00;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px #12355b0d;
+}
+
+.tarjeta h3 {
+  font-size: 21px;
+}
+
+.tarjeta p {
+  overflow-wrap: anywhere;
+}
+
+.numero {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  background: #fff0df;
+  color: #9c4300;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.precio {
+  color: #b94e00;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 7. Aviso del paquete */
+.aviso {
+  background: #e4edf8;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+/* 8. Formularios */
+.formulario {
+  max-width: 480px;
+  margin: 25px auto;
+  padding: 30px;
+  background: white;
+  border: 1px solid #e0e7ef;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #243247;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #ff7a00;
+  outline-offset: 2px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.check input {
+  width: auto;
+  accent-color: #ff7a00;
+}
+
+.ayuda {
+  background: #f2f6fc;
+  padding: 18px;
+  border-radius: 8px;
+}
+
+/* 9. Mensajes y panel */
+.nota {
+  color: #5b6878;
+  font-size: 13px;
+}
+
+#mensaje {
+  text-align: center;
+  font-weight: bold;
+}
+
+#error {
+  color: #b42318;
+  margin: 0;
+}
+
+#recomendacion {
+  color: #12355b;
+  font-weight: bold;
+}
+
+.cabecera-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+#lista .tarjeta {
+  margin-bottom: 15px;
+}
+
+/* 10. Elementos ocultos */
+.oculto {
+  display: none;
+}
+
+/* 11. Pie de página */
+footer {
+  background: #12355b;
+  color: #e0e7ef;
+  text-align: center;
+  padding: 25px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* 12. Diseño para celulares */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  main {
+    padding: 25px 15px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+  }
+
+  .tarjeta {
+    min-width: 0;
+    flex-basis: 100%;
+  }
+
+  .formulario {
+    padding: 22px;
+  }
+}
